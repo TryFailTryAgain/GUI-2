@@ -1,0 +1,144 @@
+/*
+File: pacific.css
+GUI Assignment: Style a Site with External CSS
+
+w3schools.com and developer.mozilla.org were used as learning and reference material
+to structure this assignment.
+
+Copyright (c) 2023. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+Last updated: May 30, 2023
+*/
+
+header, hgroup, nav, footer, figure, figcaption, aside, section, article {
+	display: block;
+}
+
+/* entire page defaults */
+body {
+	background-color: #00569f; /*specified in doc*/
+	background-image: url(../ptrbackground.jpg);
+	background-repeat: repeat-x; /*cover 100% left-right*/
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* headers defaults*/
+h1, h2 {
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+/*end defaults*/
+
+/*main body of the page. defines the width of all sub elements and sets a minimum size before scroll*/
+#wrapper {
+	display: grid;
+	grid-template-columns: auto auto;
+	/* gap: 10px;
+	background-color: red; */
+	min-width: 600px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+/*end main body*/
+
+header {
+	/*spans entire grid*/
+	grid-column-start: 1;
+	grid-column-end: 3;
+	background-color: #020031; /*grabbed with color picker from example images*/
+	background-image: url(../sunset.jpg); 
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: contain;
+	text-align: left;
+	padding-left: 10px;
+	color: #FFFFFF;
+}
+
+/*navigation
+  The navigation bar rests in the leftmost column of the grid and spans from the second
+  row down to the final row with the footer.
+  It contains some padding to ensure the spacing looks similar to the example and
+  the url has no underline and the colors change on hover*/
+nav {
+	/*border: red 1px solid; /*debug*/
+	background-color: #90c8e3;
+	grid-row-start: 2;
+	grid-row-end: 4;
+}
+
+nav ul {
+	font-size: 1.2em;
+	list-style-type: none;
+	padding-left: 15px;
+	padding-right: 35px;
+}
+
+nav a {
+	color: #020031; /*grabbed with color picker from example images*/
+	font-weight: bold;
+	text-decoration: none;
+}
+
+nav a:visited {
+	color: #344873;
+}
+
+nav a:hover {
+	color: #FFFFFF;
+}
+/*end navigation*/
+
+
+/*the meat and potatoes of the page. Contains title, overview, contact and the footer.
+  The padding is set to ensure a constant offset from the nav bar on the left
+  and the image is floated left to make the descriptions inline with it*/
+#content {
+	background-color: #FFFFFF;
+	padding-left: 30px;
+}
+
+h2 {
+	color: #3399CC;
+}
+#content img {
+	float: left;
+	padding-right: 20px; /*leaves room for text on right*/
+}
+
+/*resort class highlights resort name only inside the main page content*/
+#content .resort {
+	/*a close guess to example images. Image to small for accurate color pick*/
+	color: #305fa5;
+	font-weight: bold;
+}
+
+/*sets the unsorted list to have the marker gif and to be positioned inside the text field*/
+#content ul {
+	list-style-image: url(../marker.gif);
+	list-style-position: inside;
+}
+
+#contact {
+	font-size: 90%;
+}
+
+/*unsure as to what this does here, but it was in the starter code*/
+dt {
+	color: #000033;
+}
+/*end the resort content section. aka, meat and potatoes*/
+
+/*independent footer only spans the second column.
+  Slightly less left padding than #content to match example images*/
+footer {
+	font-family: Georgia, "Times New Roman", serif;
+	font-style: italic;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	background-color: #FFFFFF;
+	padding-left: 20px;
+}
